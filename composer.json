@@ -1,0 +1,27 @@
+{
+    "name": "larabizcms/for-dev",
+    "description": "LaraBiz CMS package for development",
+    "keywords": [
+        "PHP",
+        "Laravel",
+        "CMS"
+    ],
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "require": {
+        "barryvdh/laravel-debugbar": "^3.13",
+        "barryvdh/laravel-ide-helper": "^2.13"
+    },
+    "autoload": {
+        "psr-4": {
+            "LarabizCMS\\ForDev\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "LarabizCMS\\ForDev\\Providers\\ForDevServiceProvider"
+            ]
+        }
+    }
+}
