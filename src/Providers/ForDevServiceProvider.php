@@ -25,7 +25,8 @@ class ForDevServiceProvider extends ServiceProvider
     public function boot(): void
     {
         $this->commands([
-            \LarabizCMS\ForDev\Commands\GenerateViewPathCommand::class
+            \LarabizCMS\ForDev\Commands\GenerateViewPathCommand::class,
+            \LarabizCMS\ForDev\Commands\GithubReleaseModuleCommand::class,
         ]);
 
         $this->macroBuilderForDev();
