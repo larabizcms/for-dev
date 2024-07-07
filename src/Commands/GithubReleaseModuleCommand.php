@@ -101,7 +101,7 @@ class GithubReleaseModuleCommand extends Command
 
     protected function getGithubToken(): string
     {
-        $token = config('dev-tool.release.github_token');
+        $token = config('for-dev.release.github_token');
         if (empty($token)) {
             do {
                 $token = $this->ask('Please enter your github token: ');
@@ -131,7 +131,7 @@ class GithubReleaseModuleCommand extends Command
 
         return str_replace('v', '', $newTag);
     }
-    
+
     protected function runCmd(string|array $command): string
     {
         $path = $this->argument('path');
@@ -170,7 +170,7 @@ class GithubReleaseModuleCommand extends Command
             ['path', InputArgument::REQUIRED, 'Module path.'],
         ];
     }
-    
+
     protected function getOptions(): array
     {
         return [

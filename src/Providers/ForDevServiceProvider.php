@@ -18,6 +18,16 @@ use Illuminate\Support\Stringable;
 class ForDevServiceProvider extends ServiceProvider
 {
     /**
+     * Register any application services.
+     *
+     * @return void
+     */
+    public function register(): void
+    {
+        $this->mergeConfigFrom(__DIR__.'/../../config/for-dev.php', 'for-dev');
+    }
+
+    /**
      * Bootstrap any application services.
      *
      * @return void
@@ -41,16 +51,16 @@ class ForDevServiceProvider extends ServiceProvider
                     $binding = (int) $binding;
                     break;
                 case is_string($binding):
-                    $binding = "'" . $binding . "'";
+                    $binding = "'".$binding."'";
                     break;
                 case $binding instanceof Stringable:
-                    $binding = "'" . $binding->toString() . "'";
+                    $binding = "'".$binding->toString()."'";
                     break;
                 case $binding instanceof \Stringable:
-                    $binding = "'" . $binding->__toString() . "'";
+                    $binding = "'".$binding->__toString()."'";
                     break;
                 case $binding instanceof Carbon:
-                    $binding = "'". $binding->format('Y-m-d H:i:s') ."'";
+                    $binding = "'".$binding->format('Y-m-d H:i:s')."'";
                     break;
             }
 
