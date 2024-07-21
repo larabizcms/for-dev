@@ -72,14 +72,21 @@ class ForDevServiceProvider extends ServiceProvider
             );
         };
 
+        /**
+         * Adds a macro to the Builder class that returns the raw SQL query with bindings replaced.
+         *
+         * @return string The raw SQL query with bindings replaced.
+         */
         Builder::macro(
             'toRawSql',
             function () use ($rawBuilderCallback) {
-                /** @var Builder $this */
+                /**
+                 * @var Builder $this The Builder instance on which the macro was called.
+                 */
                 return array_reduce(
-                    $this->getBindings(),
-                    $rawBuilderCallback,
-                    $this->toSql()
+                    $this->getBindings(), // Get the bindings for the query.
+                    $rawBuilderCallback, // Call the rawBuilderCallback function on each binding.
+                    $this->toSql() // Get the raw SQL query with placeholders for bindings.
                 );
             }
         );

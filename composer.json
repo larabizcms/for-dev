@@ -1,10 +1,15 @@
 {
     "name": "larabizcms/for-dev",
-    "description": "LaraBiz CMS package for development",
+    "description": "Larabiz CMS package for development",
     "keywords": [
         "PHP",
         "Laravel",
-        "CMS"
+        "CMS",
+        "Larabiz",
+        "ForDev",
+        "Development",
+        "Development Tools",
+        "LarabizCMS"
     ],
     "minimum-stability": "dev",
     "prefer-stable": true,
