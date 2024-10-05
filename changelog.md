@@ -1,3 +1,7 @@
+### v1.0.2 
+* **Subject: Update package details**
+* Upgrade to Laravel 11.9 and PHP 8.2
+
 ### v1.0.1 
 * feat: Introduce 'toRawSql' macro for Eloquent Builder
 
